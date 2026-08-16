@@ -493,98 +493,103 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
   // --- 2. ABOUT & EDUCATION ---
   Widget _buildAboutSection(bool isMobile) {
+    final aboutCard = Container(
+      padding: const EdgeInsets.all(30),
+      decoration: _cardDecoration(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(
+            Icons.person_outline,
+            size: 40,
+            color: Color(0xFF00D2FF),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            'About Me',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'I am a passionate Mobile App Developer dedicated to crafting exceptional mobile experiences. I specialize in Flutter and Dart, focusing on writing clean, scalable, and maintainable code using advanced design patterns.',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.white70,
+              height: 1.6,
+            ),
+          ),
+        ],
+      ),
+    ).animate().slideX(begin: -0.2).fade(duration: 600.ms);
+
+    final eduCard = Container(
+      padding: const EdgeInsets.all(30),
+      decoration: _cardDecoration(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(
+            Icons.school_outlined,
+            size: 40,
+            color: Color(0xFF00E676),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            'Education & Training',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 25),
+          _timelineItem(
+            title: 'Intensive Code Camps - Mobile Development',
+            subtitle: 'Information Technology Institute (ITI), Minia Branch',
+            date: '11/2024 – 03/2025',
+            description:
+                'Completed intensive training program focused on modern mobile and web development practices, cross-platform technologies, and industry best practices.',
+          ),
+          const SizedBox(height: 25),
+          _timelineItem(
+            title: 'Bachelor\'s Degree in Computer Science',
+            subtitle: 'Minia University, Egypt',
+            date: '10/2020 – 10/2024',
+            description:
+                'Foundational knowledge in algorithms, data structures, software engineering, and systems design.',
+          ),
+        ],
+      ),
+    ).animate().slideX(begin: 0.2).fade(duration: 600.ms);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _sectionHeader('01.', 'About & Education'),
         const SizedBox(height: 40),
-
-        Wrap(
-          spacing: 30,
-          runSpacing: 30,
-          children: [
-            // About Me Card
-            Container(
-              width: isMobile ? double.infinity : 400,
-              padding: const EdgeInsets.all(30),
-              decoration: _cardDecoration(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Icon(
-                    Icons.person_outline,
-                    size: 40,
-                    color: Color(0xFF00D2FF),
-                  ),
-                  const SizedBox(height: 20),
-                  const Text(
-                    'About Me',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Text(
-                    'I am a passionate Mobile App Developer dedicated to crafting exceptional mobile experiences. I specialize in Flutter and Dart, focusing on writing clean, scalable, and maintainable code using advanced design patterns.',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white70,
-                      height: 1.6,
-                    ),
-                  ),
-                ],
-              ),
-            ).animate().slideX(begin: -0.2).fade(duration: 600.ms),
-
-            // Education Card
-            Expanded(
-              child: Container(
-                width: isMobile ? double.infinity : 400,
-                padding: const EdgeInsets.all(30),
-                decoration: _cardDecoration(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.school_outlined,
-                      size: 40,
-                      color: Color(0xFF00E676),
-                    ),
-                    const SizedBox(height: 20),
-                    const Text(
-                      'Education & Training',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-
-                    _timelineItem(
-                      title: 'Intensive Code Camps - Mobile Development',
-                      subtitle:
-                          'Information Technology Institute (ITI), Minia Branch',
-                      date: '11/2024 – 03/2025',
-                      description:
-                          'Completed intensive training program focused on modern mobile and web development practices, cross-platform technologies, and industry best practices.',
-                    ),
-                    const SizedBox(height: 25),
-                    _timelineItem(
-                      title: 'Bachelor\'s Degree in Computer Science',
-                      subtitle: 'Minia University, Egypt',
-                      date: '10/2020 – 10/2024',
-                      description:
-                          'Foundational knowledge in algorithms, data structures, software engineering, and systems design.',
-                    ),
-                  ],
-                ),
-              ).animate().slideX(begin: 0.2).fade(duration: 600.ms),
+        if (isMobile)
+          Column(
+            children: [
+              aboutCard,
+              const SizedBox(height: 30),
+              eduCard,
+            ],
+          )
+        else
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: aboutCard),
+                const SizedBox(width: 30),
+                Expanded(child: eduCard),
+              ],
             ),
-          ],
-        ),
+          ),
       ],
     );
   }
