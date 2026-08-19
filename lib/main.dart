@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -1285,7 +1286,9 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(widget.assetPath)
+    _controller = VideoPlayerController.asset(widget.assetPath);
+
+    _controller
       ..setLooping(true)
       ..setVolume(0)
       ..initialize().then((_) {
@@ -1301,6 +1304,21 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
+    if (_controller.value.hasError) {
+      return Container(
+        color: const Color(0xFF0B0F19),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Error: ${_controller.value.errorDescription ?? 'Unknown Video Error'}",
+              style: const TextStyle(color: Colors.red, fontSize: 12),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      );
+    }
     if (!_controller.value.isInitialized) {
       return Container(
         color: const Color(0xFF0B0F19),
