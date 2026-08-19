@@ -1286,7 +1286,9 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(widget.assetPath);
+    _controller = kIsWeb
+        ? VideoPlayerController.networkUrl(Uri.parse('assets/${widget.assetPath}'))
+        : VideoPlayerController.asset(widget.assetPath);
 
     _controller
       ..setLooping(true)
