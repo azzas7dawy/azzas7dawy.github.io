@@ -1328,16 +1328,28 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
       );
     }
 
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() => _isHovering = true);
-        _controller.play();
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          if (_controller.value.isPlaying) {
+            _controller.pause();
+            _isHovering = false;
+          } else {
+            _controller.play();
+            _isHovering = true;
+          }
+        });
       },
-      onExit: (_) {
-        setState(() => _isHovering = false);
-        _controller.pause();
-      },
-      child: Stack(
+      child: MouseRegion(
+        onEnter: (_) {
+          setState(() => _isHovering = true);
+          _controller.play();
+        },
+        onExit: (_) {
+          setState(() => _isHovering = false);
+          _controller.pause();
+        },
+        child: Stack(
         fit: StackFit.expand,
         children: [
           FittedBox(
@@ -1364,7 +1376,7 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
             ),
         ],
       ),
-    );
+    ));
   }
 }
 
