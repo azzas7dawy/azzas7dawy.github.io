@@ -19,11 +19,11 @@ class AzzaPortfolioApp extends StatelessWidget {
       title: 'Azza Sadawy | Mobile App Flutter Developer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(0xFF0B0F19), // Deeper Dark Navy
+        scaffoldBackgroundColor: const Color(0xFF1A0B14), // Deeper Dark Navy
         colorScheme: const ColorScheme.dark(
-          primary: Color(0xFF00E676), // Emerald Green
-          secondary: Color(0xFF00D2FF), // Neon Cyan
-          surface: Color(0xFF151C2C),
+          primary: Color(0xFFFF2A7F), // Emerald Green
+          secondary: Color(0xFFFF8CB3), // Neon Cyan
+          surface: Color(0xFF2A1521),
         ),
         textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
       ),
@@ -73,13 +73,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B0F19).withOpacity(0.85),
+        backgroundColor: const Color(0xFF1A0B14).withOpacity(0.85),
         elevation: 0,
         centerTitle: isMobile,
         title: Text(
           '<Azza.dev />',
           style: GoogleFonts.firaCode(
-            color: const Color(0xFF00D2FF),
+            color: const Color(0xFFFF8CB3),
             fontWeight: FontWeight.bold,
             fontSize: 24,
           ),
@@ -101,7 +101,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
       ),
       drawer: isMobile
           ? Drawer(
-              backgroundColor: const Color(0xFF151C2C),
+              backgroundColor: const Color(0xFF2A1521),
               child: ListView(
                 padding: const EdgeInsets.symmetric(
                   vertical: 60,
@@ -111,7 +111,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   Text(
                     '<Azza.dev />',
                     style: GoogleFonts.firaCode(
-                      color: const Color(0xFF00D2FF),
+                      color: const Color(0xFFFF8CB3),
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
@@ -143,7 +143,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       height: 400,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color(0xFF00D2FF).withOpacity(0.05),
+                        color: const Color(0xFFFF8CB3).withOpacity(0.05),
                       ),
                     )
                     .animate(
@@ -164,7 +164,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       height: 500,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color(0xFF00E676).withOpacity(0.05),
+                        color: const Color(0xFFFF2A7F).withOpacity(0.05),
                       ),
                     )
                     .animate(
@@ -253,14 +253,14 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         ),
         child: Text(title)
             .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .tint(color: const Color(0xFF00D2FF), duration: 200.ms),
+            .tint(color: const Color(0xFFFF8CB3), duration: 200.ms),
       ),
     );
   }
 
   Widget _drawerItem(String title, IconData icon, GlobalKey key) {
     return ListTile(
-      leading: Icon(icon, color: const Color(0xFF00D2FF)),
+      leading: Icon(icon, color: const Color(0xFFFF8CB3)),
       title: Text(
         title,
         style: const TextStyle(fontSize: 16, color: Colors.white),
@@ -270,7 +270,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         _scrollToSection(key);
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      hoverColor: const Color(0xFF00D2FF).withOpacity(0.1),
+      hoverColor: const Color(0xFFFF8CB3).withOpacity(0.1),
     );
   }
 
@@ -292,10 +292,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       vertical: 8,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF00E676).withOpacity(0.1),
+                      color: const Color(0xFFFF2A7F).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(
-                        color: const Color(0xFF00E676).withOpacity(0.5),
+                        color: const Color(0xFFFF2A7F).withOpacity(0.5),
                       ),
                     ),
                     child: Row(
@@ -305,7 +305,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                               width: 8,
                               height: 8,
                               decoration: const BoxDecoration(
-                                color: Color(0xFF00E676),
+                                color: Color(0xFFFF2A7F),
                                 shape: BoxShape.circle,
                               ),
                             )
@@ -318,7 +318,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                         const Text(
                           'Available for New Opportunities',
                           style: TextStyle(
-                            color: Color(0xFF00E676),
+                            color: Color(0xFFFF2A7F),
                             fontWeight: FontWeight.w600,
                             fontSize: 14,
                           ),
@@ -338,14 +338,14 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
                   ShaderMask(
                         shaderCallback: (bounds) => const LinearGradient(
-                          colors: [Color(0xFF00D2FF), Color(0xFF00E676)],
+                          colors: [Color(0xFFFF8CB3), Color(0xFFFF2A7F)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(bounds),
                         child: Text(
                           'Azza Sadawy',
                           style: GoogleFonts.outfit(
-                            fontSize: isMobile ? 48 : 80,
+                            fontSize: isMobile ? 38 : 80,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             height: 1.1,
@@ -386,9 +386,12 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       ElevatedButton(
                         onPressed: () => _scrollToSection(_projectsKey),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF00D2FF),
-                          foregroundColor: const Color(0xFF0B0F19),
-                          padding: const EdgeInsets.symmetric(
+                          backgroundColor: const Color(0xFFFF8CB3),
+                          foregroundColor: const Color(0xFF1A0B14),
+                          padding: isMobile ? const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 16,
+                          ) : const EdgeInsets.symmetric(
                             horizontal: 32,
                             vertical: 20,
                           ),
@@ -396,7 +399,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           elevation: 10,
-                          shadowColor: const Color(0xFF00D2FF).withOpacity(0.5),
+                          shadowColor: const Color(0xFFFF8CB3).withOpacity(0.5),
                         ),
                         child: const Text(
                           'View Projects',
@@ -424,7 +427,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             color: Colors.white30,
                             width: 2,
                           ),
-                          padding: const EdgeInsets.symmetric(
+                          padding: isMobile ? const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 16,
+                          ) : const EdgeInsets.symmetric(
                             horizontal: 32,
                             vertical: 20,
                           ),
@@ -449,17 +455,17 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       shape: BoxShape.circle,
                       gradient: LinearGradient(
                         colors: [
-                          const Color(0xFF00D2FF).withOpacity(0.2),
-                          const Color(0xFF00E676).withOpacity(0.2),
+                          const Color(0xFFFF8CB3).withOpacity(0.2),
+                          const Color(0xFFFF2A7F).withOpacity(0.2),
                         ],
                       ),
                       border: Border.all(
-                        color: const Color(0xFF00D2FF).withOpacity(0.5),
+                        color: const Color(0xFFFF8CB3).withOpacity(0.5),
                         width: 2,
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF00D2FF).withOpacity(0.15),
+                          color: const Color(0xFFFF8CB3).withOpacity(0.15),
                           blurRadius: 50,
                           spreadRadius: 20,
                         ),
@@ -503,7 +509,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const Icon(
             Icons.person_outline,
             size: 40,
-            color: Color(0xFF00D2FF),
+            color: Color(0xFFFF8CB3),
           ),
           const SizedBox(height: 20),
           const Text(
@@ -536,7 +542,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const Icon(
             Icons.school_outlined,
             size: 40,
-            color: Color(0xFF00E676),
+            color: Color(0xFFFF2A7F),
           ),
           const SizedBox(height: 20),
           const Text(
@@ -626,13 +632,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF00D2FF).withOpacity(0.1),
+                      color: const Color(0xFFFF8CB3).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Text(
                       'September 2024',
                       style: TextStyle(
-                        color: Color(0xFF00D2FF),
+                        color: Color(0xFFFF8CB3),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -644,7 +650,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 'Sabooba App Team',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Color(0xFF00E676),
+                  color: Color(0xFFFF2A7F),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -748,7 +754,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         children: [
           Row(
             children: [
-              Icon(icon, color: const Color(0xFF00D2FF), size: 28),
+              Icon(icon, color: const Color(0xFFFF8CB3), size: 28),
               const SizedBox(width: 15),
               Expanded(
                 child: Text(
@@ -774,7 +780,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       vertical: 8,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0B0F19),
+                      color: const Color(0xFF1A0B14),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: Colors.white10),
                     ),
@@ -938,7 +944,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               const Icon(
                 Icons.folder_outlined,
                 size: 36,
-                color: Color(0xFF00D2FF),
+                color: Color(0xFFFF8CB3),
               ),
               if (grade.isNotEmpty)
                 Container(
@@ -947,13 +953,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF00E676).withOpacity(0.1),
+                    color: const Color(0xFFFF2A7F).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
                     grade,
                     style: const TextStyle(
-                      color: Color(0xFF00E676),
+                      color: Color(0xFFFF2A7F),
                       fontWeight: FontWeight.bold,
                       fontSize: 12,
                     ),
@@ -1024,18 +1030,18 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
             padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 40),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [const Color(0xFF151C2C), const Color(0xFF0B0F19)],
+                colors: [const Color(0xFF2A1521), const Color(0xFF1A0B14)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
-                color: const Color(0xFF00D2FF).withOpacity(0.2),
+                color: const Color(0xFFFF8CB3).withOpacity(0.2),
                 width: 1.5,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF00D2FF).withOpacity(0.05),
+                  color: const Color(0xFFFF8CB3).withOpacity(0.05),
                   blurRadius: 40,
                   spreadRadius: 10,
                 ),
@@ -1080,8 +1086,8 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF00D2FF),
-                            foregroundColor: const Color(0xFF0B0F19),
+                            backgroundColor: const Color(0xFFFF8CB3),
+                            foregroundColor: const Color(0xFF1A0B14),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 30,
                               vertical: 20,
@@ -1105,9 +1111,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                         ),
                       ),
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: const Color(0xFF00E676),
+                        foregroundColor: const Color(0xFFFF2A7F),
                         side: const BorderSide(
-                          color: Color(0xFF00E676),
+                          color: Color(0xFFFF2A7F),
                           width: 2,
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -1138,7 +1144,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           number,
           style: GoogleFonts.firaCode(
             fontSize: 24,
-            color: const Color(0xFF00D2FF),
+            color: const Color(0xFFFF8CB3),
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -1159,7 +1165,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
   BoxDecoration _cardDecoration() {
     return BoxDecoration(
-      color: const Color(0xFF151C2C),
+      color: const Color(0xFF2A1521),
       borderRadius: BorderRadius.circular(16),
       border: Border.all(color: Colors.white.withOpacity(0.05)),
       boxShadow: [
@@ -1187,14 +1193,14 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               width: 12,
               height: 12,
               decoration: const BoxDecoration(
-                color: Color(0xFF00D2FF),
+                color: Color(0xFFFF8CB3),
                 shape: BoxShape.circle,
               ),
             ),
             Container(
               width: 2,
               height: 80,
-              color: const Color(0xFF00D2FF).withOpacity(0.3),
+              color: const Color(0xFFFF8CB3).withOpacity(0.3),
             ),
           ],
         ),
@@ -1216,7 +1222,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 subtitle,
                 style: const TextStyle(
                   fontSize: 15,
-                  color: Color(0xFF00E676),
+                  color: Color(0xFFFF2A7F),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -1252,7 +1258,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 6),
-            child: Icon(Icons.arrow_right, color: Color(0xFF00D2FF), size: 20),
+            child: Icon(Icons.arrow_right, color: Color(0xFFFF8CB3), size: 20),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -1308,7 +1314,7 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
   Widget build(BuildContext context) {
     if (_controller.value.hasError) {
       return Container(
-        color: const Color(0xFF0B0F19),
+        color: const Color(0xFF1A0B14),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -1323,9 +1329,9 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
     }
     if (!_controller.value.isInitialized) {
       return Container(
-        color: const Color(0xFF0B0F19),
+        color: const Color(0xFF1A0B14),
         child: const Center(
-          child: CircularProgressIndicator(color: Color(0xFF00D2FF)),
+          child: CircularProgressIndicator(color: Color(0xFFFF8CB3)),
         ),
       );
     }
@@ -1427,7 +1433,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
         Text(
           widget.date,
           style: const TextStyle(
-            color: Color(0xFF00E676),
+            color: Color(0xFFFF2A7F),
             fontWeight: FontWeight.bold,
             fontSize: 14,
           ),
@@ -1446,7 +1452,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
         Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: const Color(0xFF151C2C),
+            color: const Color(0xFF2A1521),
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
@@ -1475,7 +1481,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
                 (t) => Text(
                   t,
                   style: const TextStyle(
-                    color: Color(0xFF00D2FF),
+                    color: Color(0xFFFF8CB3),
                     fontSize: 14,
                     fontFamily: 'FiraCode',
                   ),
@@ -1491,7 +1497,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
             label: const Text('View Source'),
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
-              side: const BorderSide(color: Color(0xFF00D2FF)),
+              side: const BorderSide(color: Color(0xFFFF8CB3)),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             ),
           ),
@@ -1504,12 +1510,12 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFF00D2FF).withOpacity(0.3),
+          color: const Color(0xFFFF8CB3).withOpacity(0.3),
           width: 2,
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF00D2FF).withOpacity(0.1),
+            color: const Color(0xFFFF8CB3).withOpacity(0.1),
             blurRadius: 30,
             spreadRadius: -5,
           ),
@@ -1520,7 +1526,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
         child: widget.videoAsset != null
             ? _CustomVideoPlayer(assetPath: widget.videoAsset!)
             : Container(
-                color: const Color(0xFF0B0F19),
+                color: const Color(0xFF1A0B14),
                 child: const Center(
                   child: Icon(
                     Icons.image_outlined,
@@ -1617,3 +1623,4 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
     );
   }
 }
+
