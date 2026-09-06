@@ -690,6 +690,76 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
+                    'Flutter Developer',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFF8CB3).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Text(
+                      '7/7/2026',
+                      style: TextStyle(
+                        color: Color(0xFFFF8CB3),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Al-Doody Egypt – Multi-Service Delivery & Ride App',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color(0xFFFF2A7F),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 20),
+              _bulletPoint(
+                'Developed a comprehensive customer mobile application offering rides, food delivery, medicine delivery, package delivery, hotel booking, and tourism services.',
+              ),
+              _bulletPoint(
+                'Implemented features including live order tracking, in-app chat with captains, multiple payment methods, and real-time driver matching.',
+              ),
+              _bulletPoint(
+                'Built comprehensive profile, wallet, rewards program, ratings, referral system, and customer support modules.',
+              ),
+              const SizedBox(height: 30),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(14),
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: const _CustomVideoPlayer(
+                    assetPath: 'assets/video/customerApp.mp4',
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ).animate().scale(begin: const Offset(0.95, 0.95)).fade(duration: 600.ms),
+        const SizedBox(height: 40),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(35),
+          decoration: _cardDecoration(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
                     'Freelance Flutter Developer',
                     style: TextStyle(
                       fontSize: 22,
