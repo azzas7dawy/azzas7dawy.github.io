@@ -619,6 +619,66 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
+                    'Flutter Developer',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFF8CB3).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Text(
+                      '2024',
+                      style: TextStyle(
+                        color: Color(0xFFFF8CB3),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Captain App – Delivery & Ride Management Platform',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color(0xFFFF2A7F),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 20),
+              _bulletPoint(
+                'Developed a comprehensive mobile application for captains to manage delivery orders and ride requests.',
+              ),
+              _bulletPoint(
+                'Implemented features including request management, navigation, order tracking, and delivery workflow.',
+              ),
+              _bulletPoint(
+                'Built comprehensive profile, settings, wallet, rewards, and messaging modules.',
+              ),
+            ],
+          ),
+        ).animate().scale(begin: const Offset(0.95, 0.95)).fade(duration: 600.ms),
+        const SizedBox(height: 40),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(35),
+          decoration: _cardDecoration(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
                     'Freelance Flutter Developer',
                     style: TextStyle(
                       fontSize: 22,
