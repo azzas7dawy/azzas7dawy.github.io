@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -1433,9 +1433,7 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = kIsWeb
-        ? VideoPlayerController.networkUrl(Uri.parse('assets/${widget.assetPath}'))
-        : VideoPlayerController.asset(widget.assetPath);
+    _controller = VideoPlayerController.asset(widget.assetPath);
 
     _controller.initialize().then((_) {
       _chewieController = ChewieController(
