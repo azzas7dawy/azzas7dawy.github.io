@@ -332,7 +332,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   Text(
                     'Hello, I\'m',
                     style: TextStyle(
-                      fontSize: isMobile ? 20 : 28,
+                      fontSize: isMobile ? 16 : 28,
                       color: Colors.white70,
                     ),
                   ).animate().fade(delay: 200.ms),
@@ -346,7 +346,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                         child: Text(
                           'Azza Sadawy',
                           style: GoogleFonts.outfit(
-                            fontSize: isMobile ? 38 : 80,
+                            fontSize: isMobile ? 28 : 80,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             height: 1.1,
@@ -360,7 +360,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   Text(
                     'Mobile App Flutter Developer',
                     style: GoogleFonts.outfit(
-                      fontSize: isMobile ? 24 : 40,
+                      fontSize: isMobile ? 18 : 40,
                       fontWeight: FontWeight.w600,
                       color: Colors.white.withOpacity(0.9),
                     ),
@@ -372,7 +372,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                     child: Text(
                       'I build scalable, high-performance, and beautifully designed cross-platform applications for Android and iOS. Expert in Clean Architecture, state management, and delivering pixel-perfect UI/UX.',
                       style: TextStyle(
-                        fontSize: isMobile ? 16 : 20,
+                        fontSize: isMobile ? 14 : 20,
                         color: Colors.white60,
                         height: 1.6,
                       ),
@@ -516,7 +516,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const Text(
             'About Me',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: isMobile ? 20 : 24,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
@@ -525,7 +525,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const Text(
             'I am a passionate Mobile App Developer dedicated to crafting exceptional mobile experiences. I specialize in Flutter and Dart, focusing on writing clean, scalable, and maintainable code using advanced design patterns.',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: isMobile ? 14 : 16,
               color: Colors.white70,
               height: 1.6,
             ),
@@ -549,7 +549,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const Text(
             'Education & Training',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: isMobile ? 20 : 24,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
@@ -604,6 +604,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
   // --- 3. EXPERIENCE ---
   Widget _buildExperienceSection() {
+    final isMobile = MediaQuery.of(context).size.width < 900;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -622,7 +623,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   const Text(
                     'Flutter Developer',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: isMobile ? 18 : 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -650,7 +651,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               const Text(
                 'Captain App – Delivery & Ride Management Platform',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: isMobile ? 16 : 18,
                   color: Color(0xFFFF2A7F),
                   fontWeight: FontWeight.w500,
                 ),
@@ -692,7 +693,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   const Text(
                     'Flutter Developer',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: isMobile ? 18 : 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -720,7 +721,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               const Text(
                 'Al-Doody Egypt – Multi-Service Delivery & Ride App',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: isMobile ? 16 : 18,
                   color: Color(0xFFFF2A7F),
                   fontWeight: FontWeight.w500,
                 ),
@@ -762,7 +763,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   const Text(
                     'Freelance Flutter Developer',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: isMobile ? 18 : 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -790,7 +791,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               const Text(
                 'Sabooba App Team',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: isMobile ? 16 : 18,
                   color: Color(0xFFFF2A7F),
                   fontWeight: FontWeight.w500,
                 ),
@@ -1278,13 +1279,14 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
   // --- HELPERS ---
   Widget _sectionHeader(String number, String title) {
+    final isMobile = MediaQuery.of(context).size.width < 900;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           number,
           style: GoogleFonts.firaCode(
-            fontSize: 24,
+            fontSize: isMobile ? 20 : 24,
             color: const Color(0xFFFF8CB3),
             fontWeight: FontWeight.w500,
           ),
@@ -1292,8 +1294,8 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         const SizedBox(width: 15),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 32,
+          style: TextStyle(
+            fontSize: isMobile ? 24 : 32,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
@@ -1392,6 +1394,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
   }
 
   Widget _bulletPoint(String text) {
+    final isMobile = MediaQuery.of(context).size.width < 900;
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Row(
@@ -1406,7 +1409,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: isMobile ? 14 : 16,
                 color: Colors.white.withOpacity(0.8),
                 height: 1.5,
               ),
