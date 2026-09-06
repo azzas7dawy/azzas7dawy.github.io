@@ -664,6 +664,16 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               _bulletPoint(
                 'Built comprehensive profile, settings, wallet, rewards, and messaging modules.',
               ),
+              const SizedBox(height: 30),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(14),
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: const _CustomVideoPlayer(
+                    assetPath: 'assets/video/captainApp.mp4',
+                  ),
+                ),
+              ),
             ],
           ),
         ).animate().scale(begin: const Offset(0.95, 0.95)).fade(duration: 600.ms),
