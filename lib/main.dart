@@ -637,7 +637,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Text(
-                      '2024',
+                      '8/8/2026',
                       style: TextStyle(
                         color: Color(0xFFFF8CB3),
                         fontWeight: FontWeight.w600,
