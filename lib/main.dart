@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,8 +22,8 @@ class AzzaPortfolioApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF1A0B14), // Deeper Dark Navy
         colorScheme: const ColorScheme.dark(
-          primary: Color(0xFFFF2A7F), // Emerald Green
-          secondary: Color(0xFFFF8CB3), // Neon Cyan
+          primary: Color(0xFF1976D2), // Emerald Green
+          secondary: Color(0xFF64B5F6), // Neon Cyan
           surface: Color(0xFF2A1521),
         ),
         textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
@@ -79,7 +80,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         title: Text(
           '<Azza.dev />',
           style: GoogleFonts.firaCode(
-            color: const Color(0xFFFF8CB3),
+            color: const Color(0xFF64B5F6),
             fontWeight: FontWeight.bold,
             fontSize: 24,
           ),
@@ -111,7 +112,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   Text(
                     '<Azza.dev />',
                     style: GoogleFonts.firaCode(
-                      color: const Color(0xFFFF8CB3),
+                      color: const Color(0xFF64B5F6),
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
@@ -143,7 +144,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       height: 400,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color(0xFFFF8CB3).withOpacity(0.05),
+                        color: const Color(0xFF64B5F6).withOpacity(0.05),
                       ),
                     )
                     .animate(
@@ -164,7 +165,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       height: 500,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color(0xFFFF2A7F).withOpacity(0.05),
+                        color: const Color(0xFF1976D2).withOpacity(0.05),
                       ),
                     )
                     .animate(
@@ -253,14 +254,14 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         ),
         child: Text(title)
             .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .tint(color: const Color(0xFFFF8CB3), duration: 200.ms),
+            .tint(color: const Color(0xFF64B5F6), duration: 200.ms),
       ),
     );
   }
 
   Widget _drawerItem(String title, IconData icon, GlobalKey key) {
     return ListTile(
-      leading: Icon(icon, color: const Color(0xFFFF8CB3)),
+      leading: Icon(icon, color: const Color(0xFF64B5F6)),
       title: Text(
         title,
         style: const TextStyle(fontSize: 16, color: Colors.white),
@@ -270,7 +271,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         _scrollToSection(key);
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      hoverColor: const Color(0xFFFF8CB3).withOpacity(0.1),
+      hoverColor: const Color(0xFF64B5F6).withOpacity(0.1),
     );
   }
 
@@ -278,225 +279,119 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
   Widget _buildHeroSection(bool isMobile) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 3,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8,
-                    ),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFF2A7F).withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                        color: const Color(0xFFFF2A7F).withOpacity(0.5),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                              width: 8,
-                              height: 8,
-                              decoration: const BoxDecoration(
-                                color: Color(0xFFFF2A7F),
-                                shape: BoxShape.circle,
-                              ),
-                            )
-                            .animate(
-                              onPlay: (controller) =>
-                                  controller.repeat(reverse: true),
-                            )
-                            .fadeOut(duration: 600.ms),
-                        const SizedBox(width: 10),
-                        const Text(
-                          'Available for New Opportunities',
-                          style: TextStyle(
-                            color: Color(0xFFFF2A7F),
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ).animate().fade(duration: 600.ms).slideY(begin: 0.3),
+        return Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // The animated circular icons
+              const SizedBox(height: 20),
+              AnimatedHeroCircle(
+                onIconTap: (index) {
+                  switch (index % 5) {
+                    case 0:
+                      _scrollToSection(_aboutKey);
+                      break;
+                    case 1:
+                      _scrollToSection(_experienceKey);
+                      break;
+                    case 2:
+                      _scrollToSection(_skillsKey);
+                      break;
+                    case 3:
+                      _scrollToSection(_projectsKey);
+                      break;
+                    case 4:
+                      _scrollToSection(_contactKey);
+                      break;
+                  }
+                },
+              ),
+              const SizedBox(height: 40),
 
-                  const SizedBox(height: 25),
-                  Text(
-                    'Hello, I\'m',
-                    style: TextStyle(
-                      fontSize: isMobile ? 16 : 28,
-                      color: Colors.white70,
-                    ),
-                  ).animate().fade(delay: 200.ms),
-
-                  ShaderMask(
-                        shaderCallback: (bounds) => const LinearGradient(
-                          colors: [Color(0xFFFF8CB3), Color(0xFFFF2A7F)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ).createShader(bounds),
-                        child: Text(
-                          'Azza Sadawy',
-                          style: GoogleFonts.outfit(
-                            fontSize: isMobile ? 28 : 80,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            height: 1.1,
-                          ),
-                        ),
-                      )
-                      .animate()
-                      .fade(delay: 400.ms, duration: 800.ms)
-                      .shimmer(delay: 1.seconds, duration: 2.seconds),
-
-                  Text(
-                    'Mobile App Flutter Developer',
+              // Title
+              Text(
+                    'Flutter Developer Creating\nBeautiful Apps',
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.outfit(
-                      fontSize: isMobile ? 18 : 40,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white.withOpacity(0.9),
+                      fontSize: isMobile ? 32 : 54,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      height: 1.2,
                     ),
-                  ).animate().fade(delay: 600.ms).slideX(begin: -0.1),
+                  )
+                  .animate()
+                  .fade(delay: 200.ms, duration: 800.ms)
+                  .slideY(begin: 0.2),
 
-                  const SizedBox(height: 30),
-                  ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 700),
-                    child: Text(
-                      'I build scalable, high-performance, and beautifully designed cross-platform applications for Android and iOS. Expert in Clean Architecture, state management, and delivering pixel-perfect UI/UX.',
-                      style: TextStyle(
-                        fontSize: isMobile ? 14 : 20,
-                        color: Colors.white60,
-                        height: 1.6,
-                      ),
+              const SizedBox(height: 20),
+
+              // Subtitle
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 600),
+                child: Text(
+                  'Passionate about building modern apps with clean UI, smooth animations, and seamless performance.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: isMobile ? 16 : 20,
+                    color: Colors.white60,
+                    height: 1.6,
+                  ),
+                ),
+              ).animate().fade(delay: 400.ms).slideY(begin: 0.2),
+
+              const SizedBox(height: 40),
+
+              // Glowing Button
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF2196F3).withOpacity(0.4),
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                      offset: const Offset(0, 5),
                     ),
-                  ).animate().fade(delay: 800.ms),
-
-                  const SizedBox(height: 40),
-                  Wrap(
-                    spacing: 20,
-                    runSpacing: 20,
+                  ],
+                ),
+                child: ElevatedButton(
+                  onPressed: () => _scrollToSection(_projectsKey),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF1976D2),
+                    foregroundColor: Colors.white,
+                    padding: isMobile
+                        ? const EdgeInsets.symmetric(
+                            horizontal: 32,
+                            vertical: 18,
+                          )
+                        : const EdgeInsets.symmetric(
+                            horizontal: 40,
+                            vertical: 22,
+                          ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    elevation: 0,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      ElevatedButton(
-                        onPressed: () => _scrollToSection(_projectsKey),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFFF8CB3),
-                          foregroundColor: const Color(0xFF1A0B14),
-                          padding: isMobile
-                              ? const EdgeInsets.symmetric(
-                                  horizontal: 24,
-                                  vertical: 16,
-                                )
-                              : const EdgeInsets.symmetric(
-                                  horizontal: 32,
-                                  vertical: 20,
-                                ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          elevation: 10,
-                          shadowColor: const Color(0xFFFF8CB3).withOpacity(0.5),
+                      const Text(
+                        'View My Work',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
                         ),
-                        child: const Text(
-                          'View Projects',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ).animate().fade(delay: 1000.ms).scale(),
-
-                      OutlinedButton.icon(
-                        onPressed: () =>
-                            _launchURL('https://github.com/azzas7dawy'),
-                        icon: const Icon(Icons.code),
-                        label: const Text(
-                          'GitHub',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          side: const BorderSide(
-                            color: Colors.white30,
-                            width: 2,
-                          ),
-                          padding: isMobile
-                              ? const EdgeInsets.symmetric(
-                                  horizontal: 24,
-                                  vertical: 16,
-                                )
-                              : const EdgeInsets.symmetric(
-                                  horizontal: 32,
-                                  vertical: 20,
-                                ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                      ).animate().fade(delay: 1100.ms).scale(),
+                      ),
+                      const SizedBox(width: 10),
+                      const Icon(Icons.arrow_forward_rounded, size: 22),
                     ],
                   ),
-                ],
-              ),
-            ),
-            if (!isMobile) ...[
-              Expanded(
-                flex: 2,
-                child: Center(
-                  child: Container(
-                    width: 350,
-                    height: 350,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        colors: [
-                          const Color(0xFFFF8CB3).withOpacity(0.2),
-                          const Color(0xFFFF2A7F).withOpacity(0.2),
-                        ],
-                      ),
-                      border: Border.all(
-                        color: const Color(0xFFFF8CB3).withOpacity(0.5),
-                        width: 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFFFF8CB3).withOpacity(0.15),
-                          blurRadius: 50,
-                          spreadRadius: 20,
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child:
-                          const Icon(
-                                Icons.developer_mode,
-                                size: 120,
-                                color: Colors.white70,
-                              )
-                              .animate(
-                                onPlay: (controller) =>
-                                    controller.repeat(reverse: true),
-                              )
-                              .scale(
-                                begin: const Offset(1, 1),
-                                end: const Offset(1.1, 1.1),
-                                duration: 2.seconds,
-                              ),
-                    ),
-                  ).animate().fade(delay: 500.ms, duration: 1.seconds).scale(),
                 ),
-              ),
+              ).animate().fade(delay: 600.ms).scale(),
+              const SizedBox(height: 40),
             ],
-          ],
+          ),
         );
       },
     );
@@ -510,7 +405,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.person_outline, size: 40, color: Color(0xFFFF8CB3)),
+          const Icon(Icons.person_outline, size: 40, color: Color(0xFF64B5F6)),
           const SizedBox(height: 20),
           Text(
             'About Me',
@@ -539,7 +434,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.school_outlined, size: 40, color: Color(0xFFFF2A7F)),
+          const Icon(Icons.school_outlined, size: 40, color: Color(0xFF1976D2)),
           const SizedBox(height: 20),
           Text(
             'Education & Training',
@@ -623,13 +518,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFFF8CB3).withOpacity(0.1),
+                      color: const Color(0xFF64B5F6).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Text(
                       '8/8/2026',
                       style: TextStyle(
-                        color: Color(0xFFFF8CB3),
+                        color: Color(0xFF64B5F6),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -641,7 +536,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 'Captain App – Delivery & Ride Management Platform',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
-                  color: Color(0xFFFF2A7F),
+                  color: Color(0xFF1976D2),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -693,13 +588,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFFF8CB3).withOpacity(0.1),
+                      color: const Color(0xFF64B5F6).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Text(
                       '7/7/2026',
                       style: TextStyle(
-                        color: Color(0xFFFF8CB3),
+                        color: Color(0xFF64B5F6),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -711,7 +606,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 'Al-Doody Egypt – Multi-Service Delivery & Ride App',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
-                  color: Color(0xFFFF2A7F),
+                  color: Color(0xFF1976D2),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -763,13 +658,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFFF8CB3).withOpacity(0.1),
+                      color: const Color(0xFF64B5F6).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Text(
                       'September 2024',
                       style: TextStyle(
-                        color: Color(0xFFFF8CB3),
+                        color: Color(0xFF64B5F6),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -781,7 +676,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 'Sabooba App Team',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
-                  color: const Color(0xFFFF2A7F),
+                  color: const Color(0xFF1976D2),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -885,7 +780,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         children: [
           Row(
             children: [
-              Icon(icon, color: const Color(0xFFFF8CB3), size: 28),
+              Icon(icon, color: const Color(0xFF64B5F6), size: 28),
               const SizedBox(width: 15),
               Expanded(
                 child: Text(
@@ -1075,7 +970,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               const Icon(
                 Icons.folder_outlined,
                 size: 36,
-                color: Color(0xFFFF8CB3),
+                color: Color(0xFF64B5F6),
               ),
               if (grade.isNotEmpty)
                 Container(
@@ -1084,13 +979,13 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFF2A7F).withOpacity(0.1),
+                    color: const Color(0xFF1976D2).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
                     grade,
                     style: const TextStyle(
-                      color: Color(0xFFFF2A7F),
+                      color: Color(0xFF1976D2),
                       fontWeight: FontWeight.bold,
                       fontSize: 12,
                     ),
@@ -1167,12 +1062,12 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               ),
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
-                color: const Color(0xFFFF8CB3).withOpacity(0.2),
+                color: const Color(0xFF64B5F6).withOpacity(0.2),
                 width: 1.5,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFFFF8CB3).withOpacity(0.05),
+                  color: const Color(0xFF64B5F6).withOpacity(0.05),
                   blurRadius: 40,
                   spreadRadius: 10,
                 ),
@@ -1217,7 +1112,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFFF8CB3),
+                            backgroundColor: const Color(0xFF64B5F6),
                             foregroundColor: const Color(0xFF1A0B14),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 30,
@@ -1242,9 +1137,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                         ),
                       ),
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: const Color(0xFFFF2A7F),
+                        foregroundColor: const Color(0xFF1976D2),
                         side: const BorderSide(
-                          color: Color(0xFFFF2A7F),
+                          color: Color(0xFF1976D2),
                           width: 2,
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -1276,7 +1171,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           number,
           style: GoogleFonts.firaCode(
             fontSize: isMobile ? 20 : 24,
-            color: const Color(0xFFFF8CB3),
+            color: const Color(0xFF64B5F6),
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -1325,14 +1220,14 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               width: 12,
               height: 12,
               decoration: const BoxDecoration(
-                color: Color(0xFFFF8CB3),
+                color: Color(0xFF64B5F6),
                 shape: BoxShape.circle,
               ),
             ),
             Container(
               width: 2,
               height: 80,
-              color: const Color(0xFFFF8CB3).withOpacity(0.3),
+              color: const Color(0xFF64B5F6).withOpacity(0.3),
             ),
           ],
         ),
@@ -1354,7 +1249,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 subtitle,
                 style: const TextStyle(
                   fontSize: 15,
-                  color: Color(0xFFFF2A7F),
+                  color: Color(0xFF1976D2),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -1391,7 +1286,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 6),
-            child: Icon(Icons.arrow_right, color: Color(0xFFFF8CB3), size: 20),
+            child: Icon(Icons.arrow_right, color: Color(0xFF64B5F6), size: 20),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -1471,7 +1366,7 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
       return Container(
         color: const Color(0xFF1A0B14),
         child: const Center(
-          child: CircularProgressIndicator(color: Color(0xFFFF8CB3)),
+          child: CircularProgressIndicator(color: Color(0xFF64B5F6)),
         ),
       );
     }
@@ -1523,7 +1418,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
         Text(
           widget.date,
           style: const TextStyle(
-            color: Color(0xFFFF2A7F),
+            color: Color(0xFF1976D2),
             fontWeight: FontWeight.bold,
             fontSize: 14,
           ),
@@ -1571,7 +1466,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
                 (t) => Text(
                   t,
                   style: const TextStyle(
-                    color: Color(0xFFFF8CB3),
+                    color: Color(0xFF64B5F6),
                     fontSize: 14,
                     fontFamily: 'FiraCode',
                   ),
@@ -1587,7 +1482,7 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
             label: const Text('View Source'),
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
-              side: const BorderSide(color: Color(0xFFFF8CB3)),
+              side: const BorderSide(color: Color(0xFF64B5F6)),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             ),
           ),
@@ -1600,12 +1495,12 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFFFF8CB3).withOpacity(0.3),
+          color: const Color(0xFF64B5F6).withOpacity(0.3),
           width: 2,
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFFF8CB3).withOpacity(0.1),
+            color: const Color(0xFF64B5F6).withOpacity(0.1),
             blurRadius: 30,
             spreadRadius: -5,
           ),
@@ -1710,6 +1605,138 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
         }
       },
       child: layout,
+    );
+  }
+}
+
+class AnimatedHeroCircle extends StatefulWidget {
+  final void Function(int index)? onIconTap;
+  const AnimatedHeroCircle({super.key, this.onIconTap});
+
+  @override
+  State<AnimatedHeroCircle> createState() => _AnimatedHeroCircleState();
+}
+
+class _AnimatedHeroCircleState extends State<AnimatedHeroCircle>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  final List<IconData> icons = [
+    Icons.code,
+    Icons.flutter_dash,
+    Icons.cloud_done,
+    Icons.data_object,
+    Icons.devices,
+    Icons.memory,
+    Icons.storage,
+    Icons.integration_instructions,
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 20),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final double radius = MediaQuery.of(context).size.width < 900 ? 120 : 160;
+    final double centerSize = MediaQuery.of(context).size.width < 900
+        ? 80
+        : 100;
+
+    return SizedBox(
+      width: radius * 2.5,
+      height: radius * 2.5,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // The center profile
+          Container(
+            width: centerSize,
+            height: centerSize,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF2196F3).withOpacity(0.5),
+                  blurRadius: 30,
+                  spreadRadius: 10,
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFF1976D2),
+                ),
+                child: const Icon(Icons.person, size: 40, color: Colors.white),
+              ),
+            ),
+          ),
+
+          // The revolving icons
+          AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return SizedBox.expand(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: List.generate(icons.length, (index) {
+                  final double angle = (2 * math.pi / icons.length) * index;
+                  final double currentAngle =
+                      angle + (_controller.value * 2 * math.pi);
+
+                  final double x = radius * math.cos(currentAngle);
+                  final double y = radius * math.sin(currentAngle);
+
+                  return Transform.translate(
+                    offset: Offset(x, y),
+                    child: GestureDetector(
+                      onTap: () => widget.onIconTap?.call(index),
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: const Color(0xFF1E88E5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xFF2196F3).withOpacity(0.4),
+                                blurRadius: 15,
+                                spreadRadius: 2,
+                              ),
+                            ],
+                          ),
+                          child: Icon(
+                            icons[index],
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
