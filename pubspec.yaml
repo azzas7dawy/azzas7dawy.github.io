@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1 # لخطوط احترافية (Cairo / Poppins)
   video_player: ^2.2.4 # لعرض الفيديوهات داخل الصفحة
   visibility_detector: ^0.4.0+2
+  chewie: ^1.15.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

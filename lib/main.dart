@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:chewie/chewie.dart';
 
 void main() {
   runApp(const AzzaPortfolioApp());
@@ -1357,7 +1358,7 @@ class _CustomVideoPlayer extends StatefulWidget {
 
 class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
   late VideoPlayerController _controller;
-  bool _isHovering = false;
+  ChewieController? _chewieController;
 
   @override
   void initState() {
@@ -1366,17 +1367,23 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
         ? VideoPlayerController.networkUrl(Uri.parse('assets/${widget.assetPath}'))
         : VideoPlayerController.asset(widget.assetPath);
 
-    _controller
-      ..setLooping(true)
-      ..setVolume(0)
-      ..initialize().then((_) {
-        if (mounted) setState(() {});
-      });
+    _controller.initialize().then((_) {
+      _chewieController = ChewieController(
+        videoPlayerController: _controller,
+        autoPlay: false,
+        looping: true,
+        aspectRatio: _controller.value.aspectRatio,
+        allowFullScreen: true,
+        allowPlaybackSpeedChanging: true,
+      );
+      if (mounted) setState(() {});
+    });
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _chewieController?.dispose();
     super.dispose();
   }
 
@@ -1397,7 +1404,12 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
         ),
       );
     }
-    if (!_controller.value.isInitialized) {
+    
+    if (_chewieController != null && _controller.value.isInitialized) {
+      return Chewie(
+        controller: _chewieController!,
+      );
+    } else {
       return Container(
         color: const Color(0xFF1A0B14),
         child: const Center(
@@ -1405,56 +1417,6 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
         ),
       );
     }
-
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          if (_controller.value.isPlaying) {
-            _controller.pause();
-            _isHovering = false;
-          } else {
-            _controller.play();
-            _isHovering = true;
-          }
-        });
-      },
-      child: MouseRegion(
-        onEnter: (_) {
-          setState(() => _isHovering = true);
-          _controller.play();
-        },
-        onExit: (_) {
-          setState(() => _isHovering = false);
-          _controller.pause();
-        },
-        child: Stack(
-        fit: StackFit.expand,
-        children: [
-          FittedBox(
-            fit: BoxFit.cover,
-            child: SizedBox(
-              width: _controller.value.size.width,
-              height: _controller.value.size.height,
-              child: VideoPlayer(_controller),
-            ),
-          ),
-          // Overlay to show when not playing
-          AnimatedOpacity(
-            opacity: _isHovering || _controller.value.isPlaying ? 0.0 : 0.6,
-            duration: const Duration(milliseconds: 300),
-            child: Container(color: Colors.black),
-          ),
-          if (!_isHovering && !_controller.value.isPlaying)
-            const Center(
-              child: Icon(
-                Icons.play_circle_fill,
-                size: 64,
-                color: Colors.white70,
-              ),
-            ),
-        ],
-      ),
-    ));
   }
 }
 
