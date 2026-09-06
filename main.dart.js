@@ -75101,7 +75101,7 @@ o=a3?24:100
 n=A.aX(c,d.Ze(a3),c,c,c,d.e,c,c,c)
 m=d.nd()
 l=t.p
-k=A.e_(A.ll(A.cc(A.aX(c,A.c3(A.c([B.F4,B.bh,B.VF,B.kw,B.VJ],l),B.a2,B.v,B.w,B.I),c,m,c,c,c,B.mG,c),c,c),-0.2,c,c,c),c,A.aK(a2,0))
+k=A.e_(A.ll(A.cc(A.aX(c,A.c3(A.c([B.F4,B.bh,B.VG,B.kw,B.VK],l),B.a2,B.v,B.w,B.I),c,m,c,c,c,B.mG,c),c,c),-0.2,c,c,c),c,A.aK(a2,0))
 m=d.nd()
 j=A.e_(A.ll(A.cc(A.aX(c,A.c3(A.c([B.Fb,B.bh,B.VB,B.hs,d.MR("11/2024 \u2013 03/2025","Completed intensive training program focused on modern mobile and web development practices, cross-platform technologies, and industry best practices.","Information Technology Institute (ITI), Minia Branch","Intensive Code Camps - Mobile Development"),B.hs,d.MR("10/2020 \u2013 10/2024","Foundational knowledge in algorithms, data structures, software engineering, and systems design.","Minia University, Egypt","Bachelor's Degree in Computer Science")],l),B.a2,B.v,B.w,B.I),c,m,c,c,c,B.mG,c),c,c),0.2,c,c,c),c,A.aK(a2,0))
 m=A.c([d.qc("01.","About & Education"),B.c6],l)
@@ -75111,7 +75111,7 @@ m=A.aX(c,A.c3(m,B.a2,B.v,B.w,B.I),c,c,c,d.f,c,c,c)
 i=d.qc("02.","Professional Experience")
 h=d.nd()
 g=B.c.ae(25.5)
-h=A.e_(A.la(A.cc(A.aX(c,A.c3(A.c([A.cS(A.c([B.VQ,A.aX(c,B.VL,c,new A.bB(A.a7(g,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),c,c,A.cX(20),c,c,B.a5),c,c,c,B.mA,c)],l),B.E,B.cq,B.w,0),B.hr,B.VE,B.bh,d.lA("Developed a comprehensive mobile application for captains to manage delivery orders and ride requests."),d.lA("Implemented features including request management, navigation, order tracking, and delivery workflow."),d.lA("Built comprehensive profile, settings, wallet, rewards, and messaging modules."),B.ez,A.uZ(A.cX(14),new A.p9(1.7777777777777777,B.Xf,c))],l),B.a2,B.v,B.w,B.I),c,h,c,c,c,B.mI,1/0),c,c),B.uk,c,c),c,A.aK(a2,0))
+h=A.e_(A.la(A.cc(A.aX(c,A.c3(A.c([A.cS(A.c([B.VQ,A.aX(c,B.VC,c,new A.bB(A.a7(g,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),c,c,A.cX(20),c,c,B.a5),c,c,c,B.mA,c)],l),B.E,B.cq,B.w,0),B.hr,B.VF,B.bh,d.lA("Developed a comprehensive mobile application for captains to manage delivery orders and ride requests."),d.lA("Implemented features including request management, navigation, order tracking, and delivery workflow."),d.lA("Built comprehensive profile, settings, wallet, rewards, and messaging modules."),B.ez,A.uZ(A.cX(14),new A.p9(1.7777777777777777,B.Xf,c))],l),B.a2,B.v,B.w,B.I),c,h,c,c,c,B.mI,1/0),c,c),B.uk,c,c),c,A.aK(a2,0))
 f=d.nd()
 e=t.s
 return A.aso(new A.ur(a5,s,0,a4,a3,new A.Pt(c,c,1/0,56),c),A.iG(B.bx,A.c([q,p,A.asC(new A.cw(new A.ah(o,40,o,40),A.c3(A.c([B.cy,n,B.ey,m,B.ey,A.aX(c,A.c3(A.c([i,B.c6,h,B.c6,A.e_(A.la(A.cc(A.aX(c,A.c3(A.c([A.cS(A.c([B.VP,A.aX(c,B.VM,c,new A.bB(A.a7(g,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),c,c,A.cX(20),c,c,B.a5),c,c,c,B.mA,c)],l),B.E,B.cq,B.w,0),B.hr,B.VO,B.bh,d.lA("Developed user interface for Sabooba App as part of a development team."),d.lA("Collaborated with team members to deliver a high-quality mobile application for classified ads management."),d.lA("Implemented responsive and user-friendly UI components using Flutter."),d.lA("Contributed to multi-language support and theme customization features.")],l),B.a2,B.v,B.w,B.I),c,f,c,c,c,B.mI,1/0),c,c),B.uk,c,c),c,A.aK(a2,0))],l),B.a2,B.v,B.w,B.I),c,c,c,d.r,c,c,c),B.ey,A.aX(c,A.c3(A.c([d.qc("03.","Technical Expertise"),B.c6,A.As(B.bu,A.c([d.nz("Mobile Development",B.EN,A.c(["Flutter","Dart","Responsive Design","Mobile UI/UX","Platform Channels","Flavors","Dynamic Links"],e)),d.nz("Architecture & State",B.EC,A.c(["Clean Architecture","SOLID Principles","OOP","Design Patterns","Bloc (Cubit)","Provider"],e)),d.nz("Backend & Firebase",B.ER,A.c(["RESTful APIs","HTTP / Dio","Firebase Auth","Firestore","Storage","FCM","App Distribution"],e)),d.nz("Tools & Testing",B.EQ,A.c(["Git / GitHub","Android Studio / VS Code","Unit Testing","Widget Testing","Postman"],e)),d.nz("Web & Others",B.EO,A.c(["HTML / CSS","JavaScript","React","Java","C#","Material UI"],e)),d.nz("Integrations",B.EB,A.c(["Google Maps","Live Location","Paymob","PayPal","i18n (Multi-language)"],e))],l),20,20)],l),B.a2,B.v,B.w,B.I),c,c,c,d.w,c,c,c),B.ey,A.aX(c,d.Zq(a3),c,c,c,d.x,c,c,c),B.ey,A.aX(c,d.Zb(a3),c,c,c,d.y,c,c,c),B.cy,A.dB(A.c3(A.c([B.DH,B.bh,A.bJ("Designed & Built with Flutter by Azza Sadawy \xa9 2024",A.ds(c,c,A.a7(B.c.ae(127.5),B.e.n()>>>16&255,B.e.n()>>>8&255,B.e.n()&255),c,c,c,c,c,c,c,c,14,c,c,c,c,c,!0,c,c,c,c,c,c,c,c),c)],l),B.E,B.v,B.w,B.I),c,c),B.bh],l),B.a2,B.v,B.w,B.I),c),d.d)],l),B.bt),r,!0,c)},
@@ -75136,10 +75136,10 @@ p=A.a0(d).h("aa<1,cB>")
 p=A.W(new A.aa(d,new A.agY(),p),p.h("ao.E"))
 return A.w8(A.la(A.cc(A.aX(o,A.c3(A.c([l,B.bh,s,B.kx,r,B.kw,q,B.kw,A.As(B.bu,p,10,10)],m),B.a2,B.v,B.w,B.I),o,n,o,o,o,B.mE,o),o,o),B.LT,o,o),A.aK(6e5,0))},
 Zb(a){var s,r,q=null,p=this.qc("05.","Get In Touch"),o=a?1/0:700,n=A.c([B.dS,B.ba],t.t_),m=A.cX(24),l=A.pe(A.a7(51,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),1.5),k=A.c([new A.dl(10,B.cJ,A.a7(13,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),B.j,40)],t.sq),j=A.bJ("I am currently open for full-time Flutter developer positions and freelance projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!",A.ds(q,q,B.D,q,q,q,q,q,q,q,q,18,q,q,q,q,1.6,!0,q,q,q,q,q,q,q,q),B.bi),i=A.aqA(q,q,B.p,q,q,q,q,q,q,B.ba,q,q,B.mF,q,new A.c0(A.cX(12),B.q),q,q,q,q,q)
-i=A.cc(new A.vT(!0,new A.agN(this),q,q,q,i,B.R,q,!1,q,!0,q,new A.Ng(B.VC,B.Fd,i,q,q),q),new A.agO(),q)
+i=A.cc(new A.vT(!0,new A.agN(this),q,q,q,i,B.R,q,!1,q,!0,q,new A.Ng(B.VD,B.Fd,i,q,q),q),new A.agO(),q)
 s=A.aK(2e6,0)
 r=t.p
-return A.c3(A.c([p,B.c6,A.dB(A.w8(A.zm(A.cc(A.aX(q,A.c3(A.c([B.VI,B.bh,j,B.c6,A.As(B.zI,A.c([A.asB(i,A.aK(1e6,0),s),A.amS(B.Ff,B.VD,new A.agP(this),A.amT(q,q,q,q,q,q,q,q,q,B.Y,q,q,B.mF,q,new A.c0(A.cX(12),B.q),B.As,q,q,q,q))],r),20,20)],r),B.E,B.v,B.w,B.I),q,new A.bB(q,q,l,m,k,new A.iq(B.l0,B.kZ,B.bS,n,q,q),B.a5),q,q,q,B.Ed,o),q,q),0.1,q,q,q),A.aK(8e5,0)),q,q)],r),B.a2,B.v,B.w,B.I)},
+return A.c3(A.c([p,B.c6,A.dB(A.w8(A.zm(A.cc(A.aX(q,A.c3(A.c([B.VJ,B.bh,j,B.c6,A.As(B.zI,A.c([A.asB(i,A.aK(1e6,0),s),A.amS(B.Ff,B.VE,new A.agP(this),A.amT(q,q,q,q,q,q,q,q,q,B.Y,q,q,B.mF,q,new A.c0(A.cX(12),B.q),B.As,q,q,q,q))],r),20,20)],r),B.E,B.v,B.w,B.I),q,new A.bB(q,q,l,m,k,new A.iq(B.l0,B.kZ,B.bS,n,q,q),B.a5),q,q,q,B.Ed,o),q,q),0.1,q,q,q),A.aK(8e5,0)),q,q)],r),B.a2,B.v,B.w,B.I)},
 qc(a,b){var s=null
 return A.ll(A.w8(A.cc(A.cS(A.c([A.bJ(a,A.aoA().$3$color$fontSize$fontWeight(B.p,24,B.a8),s),B.z_,A.bJ(b,B.zr,s),B.z0,A.dC(A.aX(s,s,B.mc,s,1,s,s,s,s),1,s)],t.p),B.E,B.v,B.w,0),s,s),A.aK(6e5,0)),-0.1,s,s,s)},
 nd(){var s=A.cX(16)
@@ -75189,7 +75189,7 @@ s.kG(this.b)},
 $S:0}
 A.agV.prototype={
 $2(a,b){var s,r,q,p,o=null,n=6e5,m=1e6,l=A.a7(B.c.ae(25.5),B.Y.n()>>>16&255,B.Y.n()>>>8&255,B.Y.n()&255),k=A.cX(30),j=B.c.ae(127.5),i=A.pe(A.a7(j,B.Y.n()>>>16&255,B.Y.n()>>>8&255,B.Y.n()&255),1),h=A.cc(A.aX(o,o,o,B.AF,8,o,o,o,8),new A.agQ(),o),g=A.aK(n,0),f=t.p
-k=A.zm(A.e_(A.cc(A.aX(o,A.cS(A.c([h.iK(A.amg(1,o,o,g,0)),B.yZ,B.VK],f),B.E,B.v,B.b4,0),o,new A.bB(l,o,i,k,o,o,B.a5),o,o,o,B.E8,o),o,o),o,A.aK(n,0)),0.3,o,o,o)
+k=A.zm(A.e_(A.cc(A.aX(o,A.cS(A.c([h.iK(A.amg(1,o,o,g,0)),B.yZ,B.VL],f),B.E,B.v,B.b4,0),o,new A.bB(l,o,i,k,o,o,B.a5),o,o,o,B.E8,o),o,o),o,A.aK(n,0)),0.3,o,o,o)
 l=this.b
 i=A.e_(A.cc(A.bJ("Hello, I'm",A.ds(o,o,B.D,o,o,o,o,o,o,o,o,l?20:28,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o),o,o),A.aK(2e5,0),o)
 h=A.asB(A.e_(A.cc(A.asx(B.l6,A.bJ("Azza Sadawy",A.avF().$4$color$fontSize$fontWeight$height(B.e,l?38:80,B.av,1.1),o),new A.agR()),o,o),A.aK(4e5,0),A.aK(8e5,0)),A.aK(m,0),A.aK(2e6,0))
@@ -75199,7 +75199,7 @@ s=A.e_(A.cc(new A.ee(B.AB,A.bJ("I build scalable, high-performance, and beautifu
 r=this.a
 q=l?B.mD:B.mH
 p=A.cX(12)
-p=A.la(A.e_(A.cc(new A.vT(!1,new A.agS(r),o,o,o,A.aqA(o,o,B.p,o,o,o,10,o,o,B.ba,o,o,q,A.a7(j,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),new A.c0(p,B.q),o,o,o,o,o),o,o,!1,o,!0,o,B.VH,o),o,o),A.aK(m,0),o),o,o,o)
+p=A.la(A.e_(A.cc(new A.vT(!1,new A.agS(r),o,o,o,A.aqA(o,o,B.p,o,o,o,10,o,o,B.ba,o,o,q,A.a7(j,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),new A.c0(p,B.q),o,o,o,o,o),o,o,!1,o,!0,o,B.VI,o),o,o),A.aK(m,0),o),o,o,o)
 q=l?B.mD:B.mH
 q=A.c([A.dC(A.c3(A.c([k,B.hs,i,h,g,B.ez,s,B.c6,A.As(B.bu,A.c([p,A.la(A.e_(A.cc(A.amS(B.n9,B.VN,new A.agT(r),A.amT(o,o,o,o,o,o,o,o,o,B.e,o,o,q,o,new A.c0(A.cX(12),B.q),B.At,o,o,o,o)),o,o),A.aK(11e5,0),o),o,o,o)],f),20,20)],f),B.a2,B.v,B.w,B.I),3,o)],f)
 if(!l){l=A.c([A.a7(51,B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),A.a7(51,B.Y.n()>>>16&255,B.Y.n()>>>8&255,B.Y.n()&255)],t.t_)
@@ -75304,7 +75304,7 @@ p=A.a0(s).h("aa<1,cB>")
 s=A.W(new A.aa(s,new A.ahd(),p),p.h("ao.E"))
 p=t.p
 s=A.c([g,B.hr,h,B.bh,q,B.bh,A.As(B.bu,s,12,12),B.hs],p)
-if(k.a.w!=null)s.push(A.amS(B.n9,B.VG,new A.ahe(k),A.amT(j,j,j,j,j,j,j,j,j,B.e,j,j,B.Ea,j,j,B.Au,j,j,j,j)))
+if(k.a.w!=null)s.push(A.amS(B.n9,B.VH,new A.ahe(k),A.amT(j,j,j,j,j,j,j,j,j,B.e,j,j,B.Ea,j,j,B.Au,j,j,j,j)))
 o=A.c3(s,B.a2,B.d_,B.w,B.I)
 h=A.cX(16)
 g=A.pe(A.a7(B.c.ae(76.5),B.p.n()>>>16&255,B.p.n()>>>8&255,B.p.n()&255),2)
@@ -81583,21 +81583,21 @@ B.Sg=new A.n(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null
 B.VA=new A.dV(B.TH,B.SP,B.TI,B.U4,B.Sz,B.SG,B.T5,B.U0,B.Th,B.Up,B.S9,B.Sp,B.Um,B.UG,B.Sg)
 B.zp=new A.n(!0,B.e,null,null,null,null,24,B.av,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.VB=new A.cB("Education & Training",null,B.zp,null,null)
-B.hz=new A.n(!0,null,null,null,null,null,16,B.av,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.VC=new A.cB("Email Me",null,B.hz,null,null)
-B.VD=new A.cB("WhatsApp",null,B.hz,null,null)
-B.zq=new A.n(!0,B.Y,null,null,null,null,18,B.a8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.VE=new A.cB("Captain App \u2013 Delivery & Ride Management Platform",null,B.zq,null,null)
-B.VF=new A.cB("About Me",null,B.zp,null,null)
-B.VG=new A.cB("View Source",null,null,null,null)
-B.VH=new A.cB("View Projects",null,B.hz,null,null)
-B.VI=new A.cB("Let's Build Something Great Together!",null,B.zr,B.bi,null)
-B.Sl=new A.n(!0,B.D,null,null,null,null,16,null,null,null,null,null,1.6,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.VJ=new A.cB("I am a passionate Mobile App Developer dedicated to crafting exceptional mobile experiences. I specialize in Flutter and Dart, focusing on writing clean, scalable, and maintainable code using advanced design patterns.",null,B.Sl,null,null)
-B.U5=new A.n(!0,B.Y,null,null,null,null,14,B.cV,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.VK=new A.cB("Available for New Opportunities",null,B.U5,null,null)
 B.zn=new A.n(!0,B.p,null,null,null,null,null,B.cV,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.VL=new A.cB("2024",null,B.zn,null,null)
+B.VC=new A.cB("8/8/2026",null,B.zn,null,null)
+B.hz=new A.n(!0,null,null,null,null,null,16,B.av,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.VD=new A.cB("Email Me",null,B.hz,null,null)
+B.VE=new A.cB("WhatsApp",null,B.hz,null,null)
+B.zq=new A.n(!0,B.Y,null,null,null,null,18,B.a8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.VF=new A.cB("Captain App \u2013 Delivery & Ride Management Platform",null,B.zq,null,null)
+B.VG=new A.cB("About Me",null,B.zp,null,null)
+B.VH=new A.cB("View Source",null,null,null,null)
+B.VI=new A.cB("View Projects",null,B.hz,null,null)
+B.VJ=new A.cB("Let's Build Something Great Together!",null,B.zr,B.bi,null)
+B.Sl=new A.n(!0,B.D,null,null,null,null,16,null,null,null,null,null,1.6,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.VK=new A.cB("I am a passionate Mobile App Developer dedicated to crafting exceptional mobile experiences. I specialize in Flutter and Dart, focusing on writing clean, scalable, and maintainable code using advanced design patterns.",null,B.Sl,null,null)
+B.U5=new A.n(!0,B.Y,null,null,null,null,14,B.cV,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.VL=new A.cB("Available for New Opportunities",null,B.U5,null,null)
 B.VM=new A.cB("September 2024",null,B.zn,null,null)
 B.VN=new A.cB("GitHub",null,B.hz,null,null)
 B.VO=new A.cB("Sabooba App Team",null,B.zq,null,null)
