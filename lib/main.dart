@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -389,13 +388,15 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFF8CB3),
                           foregroundColor: const Color(0xFF1A0B14),
-                          padding: isMobile ? const EdgeInsets.symmetric(
-                            horizontal: 24,
-                            vertical: 16,
-                          ) : const EdgeInsets.symmetric(
-                            horizontal: 32,
-                            vertical: 20,
-                          ),
+                          padding: isMobile
+                              ? const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 16,
+                                )
+                              : const EdgeInsets.symmetric(
+                                  horizontal: 32,
+                                  vertical: 20,
+                                ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -428,13 +429,15 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             color: Colors.white30,
                             width: 2,
                           ),
-                          padding: isMobile ? const EdgeInsets.symmetric(
-                            horizontal: 24,
-                            vertical: 16,
-                          ) : const EdgeInsets.symmetric(
-                            horizontal: 32,
-                            vertical: 20,
-                          ),
+                          padding: isMobile
+                              ? const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 16,
+                                )
+                              : const EdgeInsets.symmetric(
+                                  horizontal: 32,
+                                  vertical: 20,
+                                ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -507,13 +510,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(
-            Icons.person_outline,
-            size: 40,
-            color: Color(0xFFFF8CB3),
-          ),
+          const Icon(Icons.person_outline, size: 40, color: Color(0xFFFF8CB3)),
           const SizedBox(height: 20),
-          const Text(
+          Text(
             'About Me',
             style: TextStyle(
               fontSize: isMobile ? 20 : 24,
@@ -522,7 +521,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
             ),
           ),
           const SizedBox(height: 15),
-          const Text(
+          Text(
             'I am a passionate Mobile App Developer dedicated to crafting exceptional mobile experiences. I specialize in Flutter and Dart, focusing on writing clean, scalable, and maintainable code using advanced design patterns.',
             style: TextStyle(
               fontSize: isMobile ? 14 : 16,
@@ -540,13 +539,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(
-            Icons.school_outlined,
-            size: 40,
-            color: Color(0xFFFF2A7F),
-          ),
+          const Icon(Icons.school_outlined, size: 40, color: Color(0xFFFF2A7F)),
           const SizedBox(height: 20),
-          const Text(
+          Text(
             'Education & Training',
             style: TextStyle(
               fontSize: isMobile ? 20 : 24,
@@ -580,13 +575,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
         _sectionHeader('01.', 'About & Education'),
         const SizedBox(height: 40),
         if (isMobile)
-          Column(
-            children: [
-              aboutCard,
-              const SizedBox(height: 30),
-              eduCard,
-            ],
-          )
+          Column(children: [aboutCard, const SizedBox(height: 30), eduCard])
         else
           IntrinsicHeight(
             child: Row(
@@ -620,7 +609,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Flutter Developer',
                     style: TextStyle(
                       fontSize: isMobile ? 18 : 22,
@@ -648,7 +637,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 ],
               ),
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 'Captain App – Delivery & Ride Management Platform',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
@@ -690,7 +679,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Flutter Developer',
                     style: TextStyle(
                       fontSize: isMobile ? 18 : 22,
@@ -718,7 +707,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 ],
               ),
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 'Al-Doody Egypt – Multi-Service Delivery & Ride App',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
@@ -760,7 +749,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Freelance Flutter Developer',
                     style: TextStyle(
                       fontSize: isMobile ? 18 : 22,
@@ -788,11 +777,11 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                 ],
               ),
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 'Sabooba App Team',
                 style: TextStyle(
                   fontSize: isMobile ? 16 : 18,
-                  color: Color(0xFFFF2A7F),
+                  color: const Color(0xFFFF2A7F),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -1475,11 +1464,9 @@ class _CustomVideoPlayerState extends State<_CustomVideoPlayer> {
         ),
       );
     }
-    
+
     if (_chewieController != null && _controller.value.isInitialized) {
-      return Chewie(
-        controller: _chewieController!,
-      );
+      return Chewie(controller: _chewieController!);
     } else {
       return Container(
         color: const Color(0xFF1A0B14),
@@ -1726,4 +1713,3 @@ class _ProjectShowcaseCardState extends State<ProjectShowcaseCard> {
     );
   }
 }
-
