@@ -1732,7 +1732,8 @@ class _AnimatedHeroCircleState extends State<AnimatedHeroCircle>
                     ),
                   );
                 }),
-              );
+              ),
+            );
             },
           ),
         ],
