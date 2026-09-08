@@ -341,55 +341,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
               const SizedBox(height: 40),
 
-              // Glowing Button
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF2196F3).withOpacity(0.4),
-                      blurRadius: 20,
-                      spreadRadius: 5,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: ElevatedButton(
-                  onPressed: () => _scrollToSection(_projectsKey),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF1976D2),
-                    foregroundColor: Colors.white,
-                    padding: isMobile
-                        ? const EdgeInsets.symmetric(
-                            horizontal: 32,
-                            vertical: 18,
-                          )
-                        : const EdgeInsets.symmetric(
-                            horizontal: 40,
-                            vertical: 22,
-                          ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    elevation: 0,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text(
-                        'View My Work',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Icon(Icons.arrow_forward_rounded, size: 22),
-                    ],
-                  ),
-                ),
-              ).animate().fade(delay: 600.ms).scale(),
-              const SizedBox(height: 40),
+
             ],
           ),
         );
